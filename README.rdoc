@@ -36,6 +36,11 @@ Which then gives you the ability to perform the following:
 == Install
 
   ./script/plugin install git://github.com/brennandunn/attribute_assembler.git
-  
+
+
+== Todo
+
+Possibly get defined attribute extensions to work with dirty attribute accessors?
+
 
 Copyright (c) 2008 Brennan Dunn, released under the MIT license
