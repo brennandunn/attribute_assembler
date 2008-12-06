@@ -28,8 +28,10 @@ Which then gives you the ability to perform the following:
   @person = Person.create :name => 'John C. Doe'
   
   @person.name.has_middle_name?  # => true
-  @person.name.surname           # => 'Doe'
+  @person.name.surname           # => "Doe"
   
+  # and of course, 
+  @person.name                   # => "John C. Doe"
 
 == Install
 
