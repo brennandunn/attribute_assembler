@@ -1,13 +1,37 @@
-AttributeAssembler
-==================
+= AttributeAssembler
 
-Introduction goes here.
-
-
-Example
-=======
-
-Example goes here.
+This plugin makes adding attribute-specific methods to ActiveRecord instances a breeze. It works by simply creating a 'blank slate' proxy class in place of the original attribute getter method, and allows you to create extension methods, like you can with associations and named scopes. Unless overwritten in the extension declaration block, methods will be delegated up to the attribute value instance - be it a string, integer, etc.
 
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+== Example
+
+  class Person < ActiveRecord::Base
+  
+    attribute :name do
+    
+      def has_middle_name?
+        self.split(' ').size == 3
+      end
+    
+      def surname
+        self.split(' ').last
+      end
+    
+    end
+  
+  end
+
+Which then gives you the ability to perform the following:
+
+  @person = Person.create :name => 'John C. Doe'
+  
+  @person.name.has_middle_name?  # => true
+  @person.name.surname           # => 'Doe'
+  
+
+== Install
+
+  ./script/plugin install git://github.com/brennandunn/attribute_assembler.git
+  
+
+Copyright (c) 2008 Brennan Dunn, released under the MIT license
