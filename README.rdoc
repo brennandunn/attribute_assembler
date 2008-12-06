@@ -5,6 +5,8 @@ This plugin makes adding attribute-specific methods to ActiveRecord instances a 
 
 == Example
 
+Given that your 'people' table has a string column 'name'.
+
   class Person < ActiveRecord::Base
   
     attribute :name do
