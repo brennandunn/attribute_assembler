@@ -34,7 +34,7 @@ end
 
 class Person < ActiveRecord::Base
   
-  attribute :name do
+  with_attribute :name do
     
     def has_middle_name?
       self.split(' ').size == 3
@@ -47,7 +47,7 @@ class Person < ActiveRecord::Base
   end
   
   
-  attribute :age do
+  with_attribute :age do
     
     def over_18?
       self >= 18

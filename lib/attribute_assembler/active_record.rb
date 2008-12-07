@@ -1,7 +1,7 @@
 module AttributeAssembler
   module ActiveRecord
     
-    def attribute(name, &extension)
+    def with_attribute(name, &extension)
       define_method(name) do
         AttributeProxy.new(self, name, &extension)
       end

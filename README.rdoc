@@ -9,7 +9,7 @@ Given that your 'people' table has a string column 'name'.
 
   class Person < ActiveRecord::Base
   
-    attribute :name do
+    with_attribute :name do
     
       def has_middle_name?
         self.split(' ').size == 3
